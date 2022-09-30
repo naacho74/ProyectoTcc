@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-12 col-md-8 card mx-auto d-block ">
-            <form>
+            <form [formGroup]="formulario" (ngSubmit)="analizarFormulario()">
                 <div class="row">
                     <div class="col-12">
                         <h1 class="mb-5 text-center">Ingreso Mercancia</h1>
@@ -11,7 +11,9 @@
 
                 <div class="mb-3">
                     <label class="form-label">IUP</label>
-                    <input type="text" class="form-control" id="">
+                    <input type="text" class="form-control" id="" formControlName="iup">
+                    <div *ngIf="formulario.get('iup')?.touched && formulario.get('iup')?.errors?.['required']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo es Obligatorio</div>
+                    <div *ngIf="formulario.get('iup')?.touched && formulario.get('iup')?.errors?.['minlength']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo debe tener al menos 6 caractéres</div>
                     <div id="emailHelp" class="form-text"></div>
                 </div>
                 <h1>Remitente</h1>
@@ -20,7 +22,8 @@
 
                 <div class="mb-3">
                     <label class="form-label">Tipo de Remitente</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <select class="form-select" aria-label="Default select example" formControlName="tiporemitente" >
+                       
                         <option selected>Tipo de Cliente</option>
                         <option value="1">Empresa</option>
                         <option value="2">Persona Natural</option>
@@ -36,13 +39,16 @@
                                 <span class="input-group-text" id="basic-addon1">
                                     <i class="bi bi-key"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Identificacion">
+                                <input  type="text" class="form-control" placeholder="Identificacion" formControlName="idremitente">
+                                <div *ngIf="formulario.get('idremitente')?.touched && formulario.get('idremitente')?.errors?.['required']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo es Obligatorio</div>
+                                
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <input type="text" class="form-control" placeholder="nombreremitente" formControlName="nombreremitente">
+                                <div *ngIf="formulario.get('nombreremitente')?.touched && formulario.get('nombreremitente')?.errors?.['required']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo es Obligatorio</div>
                             </div>
                         </div>
                     </div>
@@ -51,7 +57,8 @@
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-6">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" formControlName="departamentoremitente">
+                               
                                 <option selected>Departamento</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -60,7 +67,8 @@
 
                         </div>
                         <div class="col-6">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" formControlName="municipioremitente">
+                               
                                 <option selected>Municipio</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -75,7 +83,8 @@
                         <span class="input-group-text" id="basic-addon1">
                            <i></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Direccion" >
+                        <input type="text" class="form-control" placeholder="Direccion" formControlName="direccionremitente">
+                        <div *ngIf="formulario.get('direccionremitente')?.touched && formulario.get('direccionremitente')?.errors?.['required']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo es Obligatorio</div>
                       </div>
 
                    </div>
@@ -89,8 +98,9 @@
                 <hr>
 
                 <div class="mb-3">
-                    <label class="form-label">Tipo de Remitente</label>
-                    <select class="form-select" aria-label="Default select example">
+                    <label class="form-label">Tipo de Destinatario</label>
+                    <select class="form-select" aria-label="Default select example" formControlName="tipodestinatario">
+                       
                         <option selected>Tipo de Cliente</option>
                         <option value="1">Empresa</option>
                         <option value="2">Persona Natural</option>
@@ -106,13 +116,15 @@
                                 <span class="input-group-text" id="basic-addon1">
                                     <i class="bi bi-key"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Identificacion">
+                                <input type="text" class="form-control" placeholder="Identificacion" formControlName="iddestinatario">
+                                <div *ngIf="formulario.get('iddestinatario')?.touched && formulario.get('iddestinatario')?.errors?.['required']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo es Obligatorio</div>
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="input-group mb-3">
                                 <span class="input-group-text" id="basic-addon1">@</span>
-                                <input type="text" class="form-control" placeholder="Nombre">
+                                <input type="text" class="form-control" placeholder="Nombre" formControlName="nombredestinatario">
+                                <div *ngIf="formulario.get('nombredestinatario')?.touched && formulario.get('nombredestinatario')?.errors?.['required']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo es Obligatorio</div>
                             </div>
                         </div>
                     </div>
@@ -121,7 +133,8 @@
                 <div class="mb-3">
                     <div class="row">
                         <div class="col-6">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" formControlName="departamentodestinatario">
+                               
                                 <option selected>Departamento</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -130,7 +143,8 @@
 
                         </div>
                         <div class="col-6">
-                            <select class="form-select" aria-label="Default select example">
+                            <select class="form-select" aria-label="Default select example" formControlName="municipiodestinatario">
+                                
                                 <option selected>Municipio</option>
                                 <option value="1">One</option>
                                 <option value="2">Two</option>
@@ -145,7 +159,8 @@
                         <span class="input-group-text" id="basic-addon1">
                            <i></i>
                         </span>
-                        <input type="text" class="form-control" placeholder="Direccion" >
+                        <input type="text" class="form-control" placeholder="Direccion" formControlName="direcciondestinatario" >
+                        <div *ngIf="formulario.get('direcciondestinatario')?.touched && formulario.get('direcciondestinatario')?.errors?.['required']" id="emailHelp" class="form-text text-danger fw-bold">Este Campo es Obligatorio</div>
                       </div>
 
                    </div>
