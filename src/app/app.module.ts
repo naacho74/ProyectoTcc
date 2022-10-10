@@ -8,8 +8,8 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { MercanciaComponent } from './mercancia/mercancia.component';
 import { FormularioRegistroComponent } from './formulario-registro/formulario-registro.component';
-
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from "@angular/common/http"
 
 @NgModule({
   declarations: [
@@ -23,7 +23,9 @@ import {ReactiveFormsModule} from '@angular/forms'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

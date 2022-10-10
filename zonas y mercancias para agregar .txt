@@ -1,0 +1,130 @@
+[
+    {
+        "id": 1,
+        "nombre": "zona1",
+        "capacidad": 1000.0,
+        "disponible": 910.0,
+        "mercancias": [
+            {
+                "iup": 1,
+                "volumen": 50.0,
+                "nombre": "camiseta",
+                "tipoRemitente": "Empresa",
+                "idRemitente": "90081450",
+                "nombreRemitente": "color-blue",
+                "deptoRemitente": "Antioquia",
+                "municipioRemitente": "Medellin",
+                "direccionRemitente": "c.c Unicentro",
+                "tipoDestinatario": "Natural",
+                "idDestinatario": "1037045280",
+                "nombreDestinatario": "Carlos gonzales",
+                "deptoDestinatario": "Antioquia",
+                "municipioDestinatario": "San Jose de la M",
+                "direccionDestinatario": "calle 2# 23- 3"
+            },
+            {
+                "iup": 2,
+                "volumen": 40.0,
+                "nombre": "pantalones",
+                "tipoRemitente": "Empresa",
+                "idRemitente": "90081450",
+                "nombreRemitente": "color-blue",
+                "deptoRemitente": "Antioquia",
+                "municipioRemitente": "Medellin",
+                "direccionRemitente": "c.c Unicentro",
+                "tipoDestinatario": "Natural",
+                "idDestinatario": "103704534",
+                "nombreDestinatario": "Juan Correa",
+                "deptoDestinatario": "Antioquia",
+                "municipioDestinatario": "Amalfi",
+                "direccionDestinatario": "carrera 42 # 54-2"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "zona2",
+        "capacidad": 1200.0,
+        "disponible": 1100.0,
+        "mercancias": [
+            {
+                "iup": 3,
+                "volumen": 100.0,
+                "nombre": "colchon",
+                "tipoRemitente": "Empresa",
+                "idRemitente": "900342312",
+                "nombreRemitente": "comodicimo",
+                "deptoRemitente": "Antioquia",
+                "municipioRemitente": "Medellin",
+                "direccionRemitente": "calle 4 sur # 32-12",
+                "tipoDestinatario": "Natural",
+                "idDestinatario": "103345464",
+                "nombreDestinatario": "gloria perez",
+                "deptoDestinatario": "santander",
+                "municipioDestinatario": "giron",
+                "direccionDestinatario": "carrera 23# 45-12"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "zona3",
+        "capacidad": 900.0,
+        "disponible": 750.0,
+        "mercancias": [
+            {
+                "iup": 4,
+                "volumen": 150.0,
+                "nombre": "bicicleta",
+                "tipoRemitente": "Empresa",
+                "idRemitente": "900342312",
+                "nombreRemitente": "Uribe",
+                "deptoRemitente": "Antioquia",
+                "municipioRemitente": "Medellin",
+                "direccionRemitente": "calle 20 sur # 12-2",
+                "tipoDestinatario": "Natural",
+                "idDestinatario": "435345464",
+                "nombreDestinatario": "rodolfo cano",
+                "deptoDestinatario": "nariño",
+                "municipioDestinatario": "ipiales",
+                "direccionDestinatario": "calle 23# 34-12"
+            }
+        ]
+    }
+]
+
+
+
+////////////////  zona ////////////
+
+{
+"nombre":"zona3",
+"capacidad":"900",
+"disponible":"900"
+
+}
+
+
+////////// mercancias /////////////
+
+{
+"volumen":"150",
+"nombre":"bicicleta",
+"tipoRemitente":"Empresa",
+"idRemitente":"900342312",
+"nombreRemitente":"Uribe",
+"deptoRemitente":"Antioquia",
+"municipioRemitente":"Medellin",
+"direccionRemitente":"calle 20 sur # 12-2",
+"tipoDestinatario":"Natural",
+"idDestinatario":"435345464",
+"nombreDestinatario":"rodolfo cano",
+"deptoDestinatario":"nariño",
+"municipioDestinatario":"ipiales",
+"direccionDestinatario":"calle 23# 34-12",
+"zona":{
+ "id":3   
+}
+
+
+}
