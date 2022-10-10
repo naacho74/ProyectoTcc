@@ -10,6 +10,8 @@ import { MercanciaComponent } from './mercancia/mercancia.component';
 import { FormularioRegistroComponent } from './formulario-registro/formulario-registro.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http"
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { GraficaComponent } from './grafica/grafica.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +20,15 @@ import {HttpClientModule} from "@angular/common/http"
     FooterComponent,
     HomeComponent,
     MercanciaComponent,
-    FormularioRegistroComponent
+    FormularioRegistroComponent,
+    GraficaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxChartsModule
     
   ],
   providers: [],
