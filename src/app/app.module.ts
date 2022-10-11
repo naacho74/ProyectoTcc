@@ -12,6 +12,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from "@angular/common/http"
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { GraficaComponent } from './grafica/grafica.component';
+import { InicioComponent } from './inicio/inicio.component';
+import { CuartoComponent } from './cuarto/cuarto.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { GraficaComponent } from './grafica/grafica.component';
     HomeComponent,
     MercanciaComponent,
     FormularioRegistroComponent,
-    GraficaComponent
+    GraficaComponent,
+    InicioComponent,
+    CuartoComponent
   ],
   imports: [
     BrowserModule,

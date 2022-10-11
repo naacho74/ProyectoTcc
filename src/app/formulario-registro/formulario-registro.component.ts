@@ -29,14 +29,25 @@ datosZonas:any[]=[];
     .subscribe(respuesta=>{
 
       this.datosZonas=respuesta.map((zona:any)=>{
-        return {nombre:zona.nombre}
+        return {nombre:zona.nombre,id:zona.id}
       })
     })
    
   }
 
   public analizarFormulario():void{
-    console.log(this.formulario.value)
+   let datosDeMercancia= this.formulario.value
+   datosDeMercancia.volumen=15
+   datosDeMercancia.nombre="mercancia prueba"
+   datosDeMercancia.zona={id:this.formulario.value.zona}
+   this.servicioMercancias.ingresarMercancia(datosDeMercancia)
+   .subscribe(respuesta=>{
+    console.log(respuesta)
+    window.location.reload()
+   })
+  console.log(datosDeMercancia)
+
+
   }
   public inicializarFormulario():FormGroup{
     return this.fabricaDiccionario.group({
@@ -52,7 +63,8 @@ datosZonas:any[]=[];
       nombredestinatario:['',[Validators.required]],
       departamentodestinatario:['',[Validators.required]],
       municipiodestinatario:['',[Validators.required]],
-      direcciondestinatario:['',[Validators.required]]
+      direcciondestinatario:['',[Validators.required]],
+      zona:['1',[Validators.required]]
     })
 
 
@@ -86,7 +98,7 @@ datosZonas:any[]=[];
       
       },
        error=>{console.log(error.error)
-       this.formulario.reset() 
+       //this.formulario.reset() 
       this.formulario.enable()
       this.controlIdZona=true
       

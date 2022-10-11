@@ -22,7 +22,7 @@
                         <div class="card h-100">
                             <h2 class="text-center text-muted">zona: {{dato.nombre}}</h2>
                             <h2 class="text-center text-muted">{{mercancia.nombre}}</h2>
-                            <button class="btn btn-primary m-2" >Retirar del cuarto</button>
+                            <button class="btn btn-primary m-2" (click)="retirarMercancia(mercancia.iup)">Retirar del cuarto</button>
                         </div>
 
                     </div>

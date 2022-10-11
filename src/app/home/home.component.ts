@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MercanciasService } from '../services/mercancias.service';
 import { ZonasService } from '../services/zonas.service';
 
 
@@ -10,7 +11,11 @@ import { ZonasService } from '../services/zonas.service';
 export class HomeComponent implements OnInit {
 
   datosZonas:any[]=[];
-  constructor(public servicioZona:ZonasService) {
+  constructor(
+    public servicioZona:ZonasService,
+    public servicioMercancia:MercanciasService
+    
+    ) {
     this.servicioZona.consultarZona()
     .subscribe(respuesta=>{
      
@@ -18,6 +23,16 @@ export class HomeComponent implements OnInit {
     })
 
    }
+
+   retirarMercancia(idMercancia:any):void{
+
+    this.servicioMercancia.retirarMercancia(idMercancia)
+    .subscribe(respuesta=>{
+      console.log(respuesta)
+      window.location.reload()
+    })
+    
+  }
 
   ngOnInit(): void {
   }
