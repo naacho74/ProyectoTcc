@@ -1,8 +1,14 @@
 .menu{
-    background-color: #c21a21;
 
+    background-color: #C21a21;
 }
 
 .amarillo{
-    background-color: #fbba28;
+    background-color: #fbda28;
 }
+
+.logo{
+    height: 150px;
+    width: 250px;
+}
+

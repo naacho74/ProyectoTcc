@@ -1,36 +1,42 @@
 <app-menu></app-menu>
-<br>
 
-<div class="container">
-    <app-formulario-registro></app-formulario-registro>
-    
-    <div class="col-6">
-        <div class="row">
-            <div class="col-12">
-                <h2>Disponibilidad</h2>
-                <app-grafica></app-grafica>
-
-            </div>
+<div class="container-fluid mt-3">
+    <div class="row">
+        <div class="col-6">
+          <app-formularioregistro></app-formularioregistro>
+          
         </div>
-        <div class="row">
+        <div class="col-6">
+          <div class="row">
             <div class="col-12">
-                <h2>Mercancias en Cuarto</h2>
-
+              <h2>Disponibilidad:</h2>
+              <app-grafica></app-grafica>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                <h2>Mercancias en cuarto:</h2>
                 <div class="row row-cols-1 row-cols-md-2 g-3" *ngFor="let dato of datosZonas">
+                  <div class="col my-3" *ngFor="let mercancia of dato.mercancias">
+                    <div class="card h-100">
 
-                    <div class="col my-3" *ngFor="let mercancia of dato.mercancias">
-                        <div class="card h-100">
-                            <h2 class="text-center text-muted">zona: {{dato.nombre}}</h2>
-                            <h2 class="text-center text-muted">{{mercancia.nombre}}</h2>
-                            <button class="btn btn-primary m-2" (click)="retirarMercancia(mercancia.iup)">Retirar del cuarto</button>
-                        </div>
+                      <h2 class="text-center text-muted">zona: {{dato.nombre}}</h2>
+                      <h2 class="text-center text-muted">{{mercancia.nombre}}</h2>
+                      <h3 class="text-center text-muted">volumen ocupado:{{mercancia.volumen}} u3</h3>
+                      <h2 class="text-center text-muted">IUP:{{mercancia.iup}}</h2>
+                      <button (click)="retirarMercancia(mercancia.iup)" class="btn btn-primary m-2" type="button">Retirar del cuarto</button>
 
                     </div>
 
-
+                  </div>
                 </div>
+              </div>
             </div>
         </div>
     </div>
+
 </div>
 
+
+
+<app-footer></app-footer>

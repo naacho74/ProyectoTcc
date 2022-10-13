@@ -1,26 +1,28 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {HttpClient} from '@angular/common/http'
 import { Observable } from 'rxjs';
+
 @Injectable({
   providedIn: 'root'
 })
 export class MercanciasService {
 
   constructor(public peticion:HttpClient) { }
-  
-  public buscarMercanciaPorId(id:any):Observable<any>{
+
+  buscarMercanciaPorId(id:any):Observable<any>{
     let uri=`http://localhost:8080/api/tcc/mercancias/${id}`
     return this.peticion.get(uri)
   }
 
-  ingresarMercancia(datosMercancias:any):Observable<any>{
+  ingresarMercancia(datosMercancia:any):Observable<any>{
     let uri=`http://localhost:8080/api/tcc/mercancias`
-    return this.peticion.post(uri,datosMercancias)
+    return this.peticion.post(uri,datosMercancia)
   }
 
   retirarMercancia(id:any):Observable<any>{
     let uri=`http://localhost:8080/api/tcc/mercancias/${id}`
-    return this.peticion.delete(uri) 
+    return this.peticion.delete(uri)
   }
+
 
 }

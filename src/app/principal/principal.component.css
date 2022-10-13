@@ -1,0 +1,50 @@
+.cajas{
+    width: 100%;
+    height: 150px;
+}
+
+.fila{
+flex-direction: column;
+align-items: center;
+
+}
+
+.imagen1{
+     background-image: url("../../assets/img/rack1.jpg"); 
+    height: 350px;
+    width: 50%;
+    padding: 10px, 5px;
+    color:white;;
+
+}
+
+.imagen2{
+    background-image: url("../../assets/img/rack.jpg");
+    height: 350px;
+    width: 50%;
+    padding: 10px, 5px;
+}
+
+a{
+text-decoration: none;
+color: white;
+
+}
+
+.titulos{
+padding-top: 27%; ;
+}
+.carrito{
+height: 200px;
+width: 120px;
+z-index: 5;
+top:500px;
+position: fixed;
+right: 5px;
+
+
+}
+
+div{
+
+}

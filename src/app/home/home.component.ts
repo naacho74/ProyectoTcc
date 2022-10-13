@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MercanciasService } from '../services/mercancias.service';
 import { ZonasService } from '../services/zonas.service';
 
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -11,20 +10,21 @@ import { ZonasService } from '../services/zonas.service';
 export class HomeComponent implements OnInit {
 
   datosZonas:any[]=[];
+
   constructor(
     public servicioZona:ZonasService,
     public servicioMercancia:MercanciasService
-    
     ) {
-    this.servicioZona.consultarZona()
-    .subscribe(respuesta=>{
-     
-    this.datosZonas= respuesta
-    })
 
-   }
+    this.servicioZona.consultarZonas()
+      .subscribe(respuesta=>{
+        console.log(respuesta);
+        this.datosZonas=respuesta
+      })
 
-   retirarMercancia(idMercancia:any):void{
+  }
+
+  retirarMercancia(idMercancia:any):void{
 
     this.servicioMercancia.retirarMercancia(idMercancia)
     .subscribe(respuesta=>{
