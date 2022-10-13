@@ -8,27 +8,44 @@ import { Component, OnInit } from '@angular/core';
 export class PrincipalComponent implements OnInit {
 
 
-  bandera:boolean=false
+  bandera1:boolean=false
+  bandera2:boolean=false
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  cambiarTexto():void{
+  cambiarTexto1():void{
    
     
     
-    this.bandera=true
+    this.bandera1=true
 
-    console.log(this.bandera);
+    console.log(this.bandera1);
     console.log("camniando");
 
 
   }
 
-  retirartexto():void{
-    this.bandera=false
+  retirartexto1():void{
+    this.bandera1=false
+  }
+
+  cambiarTexto2():void{
+   
+    
+    
+    this.bandera2=true
+
+    console.log(this.bandera2);
+    console.log("camniando");
+
+
+  }
+
+  retirartexto2():void{
+    this.bandera2=false
   }
 
 
@@ -36,3 +53,5 @@ export class PrincipalComponent implements OnInit {
 
 
 }
+
+

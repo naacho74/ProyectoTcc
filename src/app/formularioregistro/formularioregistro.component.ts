@@ -40,8 +40,21 @@ export class FormularioregistroComponent implements OnInit {
   public analizarFormulario():void{
 
     let datosMercancia=this.formulario.value
-    datosMercancia.volumen=10
-    datosMercancia.nombre="MERCANCIA PRUEBA"
+    datosMercancia.volumen=this.formulario.value.volumen
+    datosMercancia.nombre=this.formulario.value.nombre
+    datosMercancia.iup=this.formulario.value.iup
+    datosMercancia.tipoRemitente=this.formulario.value.tiporemitente
+    datosMercancia.tipoDestinatario=this.formulario.value.tipodestinatario
+    datosMercancia.idRemitente=this.formulario.value.idremitente
+    datosMercancia.idDestinatario=this.formulario.value.iddestinatario
+    datosMercancia.nombreRemitente=this.formulario.value.nombreremitente
+    datosMercancia.nombreDestinatario=this.formulario.value.nombredestinatario
+    datosMercancia.deptoRemitente=this.formulario.value.deptoremitente
+    datosMercancia.deptoDestinatario=this.formulario.value.deptodestinatario
+    datosMercancia.municipioRemitente=this.formulario.value.municipioremitente
+    datosMercancia.municipioDestinatario=this.formulario.value.municipiodestinatario
+    datosMercancia.direccionRemitente=this.formulario.value.direccionremitente
+    datosMercancia.direccionDestinatario=this.formulario.value.direcciondestinatario
     datosMercancia.zona={id:this.formulario.value.zona}
 
     this.servicioMercancias.ingresarMercancia(datosMercancia)
@@ -57,6 +70,8 @@ export class FormularioregistroComponent implements OnInit {
   public inicializarFormulario():FormGroup{
     return this.fabricaDiccionario.group({
       iup:['',[Validators.required]],
+      nombre:['',[Validators.required]],
+      volumen:['',[Validators.required]],
       tiporemitente:['',[Validators.required]],
       idremitente:['',[Validators.required]],
       nombreremitente:['',[Validators.required]],

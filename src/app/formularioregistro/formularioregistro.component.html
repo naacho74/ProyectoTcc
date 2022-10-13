@@ -16,6 +16,12 @@
         </div>
         <div *ngIf="formulario.get('iup')?.touched && formulario.get('iup')?.errors?.['required']" class="form-text text-danger fw-bold">Este campo es obligatorio</div>
         <div *ngIf="formulario.get('iup')?.touched && formulario.get('iup')?.errors?.['minlength']" class="form-text text-danger fw-bold">Este campo debe tener al menos 6 caractéres</div>
+
+        <div class="input-group mb-3">
+            
+            <input type="text" class="form-control" placeholder="Descripcion" formControlName="nombre">
+            <input type="text" class="form-control" placeholder="volumen" formControlName="volumen">
+        </div>
     </div>
 
     <div class="row">
