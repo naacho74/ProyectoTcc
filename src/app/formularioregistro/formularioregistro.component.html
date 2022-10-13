@@ -18,101 +18,108 @@
         <div *ngIf="formulario.get('iup')?.touched && formulario.get('iup')?.errors?.['minlength']" class="form-text text-danger fw-bold">Este campo debe tener al menos 6 caractéres</div>
     </div>
 
-    <div class="mb-3 mt-5">
-        <h4>Remitente: </h4>
-        <hr>
-        <label class="form-label">Tipo de remitente: </label>
-        <input type="text" class="form-control" placeholder="TipoRemitente" formControlName="tiporemitente">
-    </div>
-
-    <div class="mb-3">
-        <div class="row">
-            <div class="col-6">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">
-                        <i class="bi bi-key"></i>
-                    </span>
-                    <input type="text" class="form-control" placeholder="identificación" formControlName="idremitente">
+    <div class="row">
+        <div class="col col-12 col-md-6">
+            <div class="mb-3 mt-5">
+                <h4>Remitente: </h4>
+                <hr>
+                <label class="form-label">Tipo de remitente: </label>
+                <input type="text" class="form-control" placeholder="TipoRemitente" formControlName="tiporemitente">
+            </div>
+        
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-key"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="identificación" formControlName="idremitente">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-person-circle"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Nombre" formControlName="nombreremitente">
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="col-6">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">
-                        <i class="bi bi-person-circle"></i>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Nombre" formControlName="nombreremitente">
+        
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="departamento" formControlName="deptoremitente">
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="municipio" formControlName="municipioremitente">
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    <div class="mb-3">
-        <div class="row">
-            <div class="col-6">
-                <input type="text" class="form-control" placeholder="departamento" formControlName="deptoremitente">
-            </div>
-            <div class="col-6">
-                <input type="text" class="form-control" placeholder="municipio" formControlName="municipioremitente">
-            </div>
-        </div>
-    </div>
-
-    <div class="mb-3">
-        <div class="input-group mb-3">
-            <span class="input-group-text">
-                <i class="bi bi-geo-alt"></i>
-            </span>
-            <input type="text" class="form-control" placeholder="Dirección" formControlName="direccionremitente">
-        </div>
-    </div>
-
-    <div class="mb-3 mt-5">
-        <h4>Destinatario: </h4>
-        <hr>
-        <label class="form-label">Tipo de Destinatario: </label>
-        <input type="text" class="form-control" placeholder="TipoDestinatario" formControlName="tipodestinatario">
-    </div>
-
-    <div class="mb-3">
-        <div class="row">
-            <div class="col-6">
+        
+            <div class="mb-3">
                 <div class="input-group mb-3">
                     <span class="input-group-text">
-                        <i class="bi bi-key"></i>
+                        <i class="bi bi-geo-alt"></i>
                     </span>
-                    <input type="text" class="form-control" placeholder="identificación" formControlName="iddestinatario">
-                </div>
-            </div>
-            <div class="col-6">
-                <div class="input-group mb-3">
-                    <span class="input-group-text">
-                        <i class="bi bi-person-circle"></i>
-                    </span>
-                    <input type="text" class="form-control" placeholder="Nombre" formControlName="nombredestinatario">
+                    <input type="text" class="form-control" placeholder="Dirección" formControlName="direccionremitente">
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="mb-3">
-        <div class="row">
-            <div class="col-6">
-                <input type="text" class="form-control" placeholder="Departamento" formControlName="deptodestinatario">
+        <div class="col col-12 col-md-6">
+            <div class="mb-3 mt-5">
+                <h4>Destinatario: </h4>
+                <hr>
+                <label class="form-label">Tipo de Destinatario: </label>
+                <input type="text" class="form-control" placeholder="TipoDestinatario" formControlName="tipodestinatario">
             </div>
-            <div class="col-6">
-                <input type="text" class="form-control" placeholder="Municipio" formControlName="municipiodestinatario">
+        
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-key"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="identificación" formControlName="iddestinatario">
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text">
+                                <i class="bi bi-person-circle"></i>
+                            </span>
+                            <input type="text" class="form-control" placeholder="Nombre" formControlName="nombredestinatario">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <div class="row">
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="Departamento" formControlName="deptodestinatario">
+                    </div>
+                    <div class="col-6">
+                        <input type="text" class="form-control" placeholder="Municipio" formControlName="municipiodestinatario">
+                    </div>
+                </div>
+            </div>
+        
+            <div class="mb-3">
+                <div class="input-group mb-3">
+                    <span class="input-group-text">
+                        <i class="bi bi-geo-alt"></i>
+                    </span>
+                    <input type="text" class="form-control" placeholder="Dirección" formControlName="direcciondestinatario">
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="mb-3">
-        <div class="input-group mb-3">
-            <span class="input-group-text">
-                <i class="bi bi-geo-alt"></i>
-            </span>
-            <input type="text" class="form-control" placeholder="Dirección" formControlName="direcciondestinatario">
-        </div>
-    </div>
+
 
     <div class="mb-3 mt-5">
         <h4>Ubicación en cuarto: </h4>
