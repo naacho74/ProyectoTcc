@@ -22,12 +22,14 @@
              <div class="col col-12 col-md-12 w-100">
               <table class="table bg-secondary"  >
                 <thead class=" table-dark bg-dark">
+                  <th class="p-3 text-center"></th>
                   <th class="p-3 text-center">Mercancia</th>
                   <th class="p-3 text-center">Volumen</th>
                   <th class="p-3 text-center">Iup</th>
                   <th class="p-3 text-center"></th>
                 </thead>
                   <tbody class=" bg-light" *ngFor="let mercancia of dato.mercancias | filter: filterdatosMercancias">
+                    <td class="p-3 text-center"><i (mouseover)="alertaDeNovedad(mercancia.novedad)" class="bi bi-exclamation-triangle-fill novedad"></i></td>
                     <td class="p-3 text-center">{{mercancia.nombre}}</td>
                     <td class="p-3 text-center">{{mercancia.volumen}}</td>
                     <td class="p-3 text-center">{{mercancia.iup}}</td>
