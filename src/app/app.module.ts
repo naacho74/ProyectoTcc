@@ -14,8 +14,14 @@ import {HttpClientModule} from '@angular/common/http'
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { GraficaComponent } from './grafica/grafica.component';
 import { PrincipalComponent } from './principal/principal.component';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule} from '@angular/material/form-field'
+import {MatInputModule} from '@angular/material/input'
+
 
 import {CuartoComponent} from './cuarto/cuarto.component';
+import { FilterPipe } from './pipes/filter.pipe';
+import { BarrabusquedaComponent } from './barrabusqueda/barrabusqueda.component';
 
 @NgModule({
   declarations: [
@@ -27,14 +33,18 @@ import {CuartoComponent} from './cuarto/cuarto.component';
     FormularioregistroComponent,
     GraficaComponent,
     PrincipalComponent,
-    CuartoComponent
+    CuartoComponent,
+    FilterPipe,
+    BarrabusquedaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FormsModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

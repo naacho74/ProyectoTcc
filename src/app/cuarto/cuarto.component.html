@@ -1,29 +1,45 @@
 <app-menu></app-menu>
 
-<div class="row row-cols-12 row-cols-md-12">
-    <div class="col col-6 col-md-12">
+<div class="row row-cols-12 row-cols-md-11 w-100">
+    <div class="col col-12 col-md-12">
+
+    </div>
+    <div class="col col-6 col-md-7 shadow p-5">
         <div class="row row-cols-1 row-cols-2 w-100">
-            <div class="col col-12 col-md-12 w-75 h-100 mx-auto d-block mt-5" *ngFor="let dato of datosZonas">
-                <h1 class="border-bottom p-4 bg-light">{{dato.nombre}}</h1>
-                <table class="table bg-secondary" >
-                    <thead class="table-dark bg-dark">
-                      <th class="p-3 text-center">Mercancia</th>
-                      <th class="p-3 text-center">Volumen</th>
-                      <th class="p-3 text-center">Iup</th>
-                      <th class="p-3 text-center"></th>
-                    </thead>
-                      <tbody class="bg-light" *ngFor="let mercancia of dato.mercancias">
-                        <td class="p-3 text-center">{{mercancia.nombre}}</td>
-                        <td class="p-3 text-center">{{mercancia.volumen}}</td>
-                        <td class="p-3 text-center">{{mercancia.iup}}</td>
-                        <td class="p-2"> <button (click)="retirarMercancia(mercancia.iup)" class="btn btn-outline-danger m-2" type="button"><i class="bi bi-trash"></i></button></td>
-                      </tbody> 
-                  </table>
+          <div class="col col-12 col-md-12 mx-auto m-xxl-auto d-block p-4">
+            <app-barrabusqueda (search)="handleSearch($event)"></app-barrabusqueda>
+          </div>
+          
+
+      
+
+            <div class="col col-12 col-md-6 w-75 h-100 mx-auto d-block mt-5" *ngFor="let dato of datosZonas ">
+                 <div class="col col-12 col-md-12">
+                  <div class="card pointer border-bottom p-4 bg-light">
+                    <h1 class="w-100" (click)="visibleTablas()">{{dato.nombre}}</h1>
+                  </div>
+                 </div>
+             <div class="col col-12 col-md-12 w-100">
+              <table class="table bg-secondary"  >
+                <thead class=" table-dark bg-dark">
+                  <th class="p-3 text-center">Mercancia</th>
+                  <th class="p-3 text-center">Volumen</th>
+                  <th class="p-3 text-center">Iup</th>
+                  <th class="p-3 text-center"></th>
+                </thead>
+                  <tbody class=" bg-light" *ngFor="let mercancia of dato.mercancias | filter: filterdatosMercancias">
+                    <td class="p-3 text-center">{{mercancia.nombre}}</td>
+                    <td class="p-3 text-center">{{mercancia.volumen}}</td>
+                    <td class="p-3 text-center">{{mercancia.iup}}</td>
+                    <td class="p-2"> <button (click)="retirarMercancia(mercancia.iup)" class="btn btn-outline-danger m-2" type="button"><i class="bi bi-trash"></i></button></td>
+                  </tbody> 
+              </table>
+             </div>
             </div>
           </div>
     </div>
-    <div class="col col-6 col-md-12">
-        <app-grafica></app-grafica>
+    <div class="col col-12 col-md-5">
+        <app-grafica class="position-grafica"></app-grafica>
     </div>
 
 </div>

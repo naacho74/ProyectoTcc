@@ -8,6 +8,9 @@ import { Observable } from 'rxjs';
 })
 
 export class ZonasService {
+
+  filtroZona='';
+
   constructor(public peticion:HttpClient) { }
 
   public consultarZonas():Observable<any>{

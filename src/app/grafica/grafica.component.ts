@@ -9,13 +9,13 @@ import { ZonasService } from '../services/zonas.service';
   styleUrls: ['./grafica.component.css']
 })
 export class GraficaComponent{
-  view: [number,number] = [700, 400];
+  view: [number,number] = [500, 300];
 
   // options
   gradient: boolean = true;
   showLegend: boolean = true;
   showLabels: boolean = true;
-  isDoughnut: boolean = false;
+  isDoughnut: boolean = true;
   legendPosition: LegendPosition=LegendPosition.Below;
 
   colorScheme : Color= {

@@ -1,6 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
+
 import { MercanciasService } from '../services/mercancias.service';
 import { ZonasService } from '../services/zonas.service';
+
+
 
 @Component({
   selector: 'app-cuarto',
@@ -9,6 +13,7 @@ import { ZonasService } from '../services/zonas.service';
 })
 export class CuartoComponent implements OnInit {
 
+ 
   datosZonas:any[]=[];
 
   constructor(public servicioZona:ZonasService,
@@ -32,8 +37,31 @@ export class CuartoComponent implements OnInit {
     })
     
   }
+  tablas:boolean = false;
 
-  ngOnInit(): void {
+  public visibleTablas(){
+    console.log(this.tablas)
+      this.tablas=true;
+    
+
+    console.log(this.tablas)
+      
   }
 
-}
+  public invisibleTablas(){
+    this.tablas=false;
+    
+  }
+
+
+  ngOnInit(): void {
+    
+   }
+  
+   filterdatosMercancias:any='';
+
+   handleSearch(value:string){
+    this.filterdatosMercancias=value
+   }
+
+ }
