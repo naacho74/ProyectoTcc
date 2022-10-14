@@ -4,7 +4,7 @@
     <div class="col col-12 col-md-12">
 
     </div>
-    <div class="col col-6 col-md-7 shadow p-5">
+    <div class="col col-6 col-md-7 shadow p-5 m-5">
         <div class="row row-cols-1 row-cols-2 w-100">
           <div class="col col-12 col-md-12 mx-auto m-xxl-auto d-block p-4">
             <app-barrabusqueda (search)="handleSearch($event)"></app-barrabusqueda>
@@ -13,7 +13,7 @@
 
       
 
-            <div class="col col-12 col-md-6 w-75 h-100 mx-auto d-block mt-5" *ngFor="let dato of datosZonas ">
+            <div class="col col-12 col-md-7 w-75 h-100 mx-auto d-block mt-5 " *ngFor="let dato of datosZonas ">
                  <div class="col col-12 col-md-12">
                   <div class="card pointer border-bottom p-4 bg-light">
                     <h1 class="w-100" (click)="visibleTablas()">{{dato.nombre}}</h1>
@@ -22,8 +22,8 @@
              <div class="col col-12 col-md-12 w-100">
               <table class="table bg-secondary"  >
                 <thead class=" table-dark bg-dark">
-                  <th class="p-3 text-center"></th>
-                  <th class="p-3 text-center">Mercancia</th>
+                  <th class="p-3 text-center">Novedad</th>
+                  <th class="p-3 text-center">Descripcion Mercancia</th>
                   <th class="p-3 text-center">Volumen</th>
                   <th class="p-3 text-center">Iup</th>
                   <th class="p-3 text-center"></th>
@@ -40,8 +40,8 @@
             </div>
           </div>
     </div>
-    <div class="col col-12 col-md-5">
-        <app-grafica class="position-grafica"></app-grafica>
+    <div class="col col-12 col-md-4 mt-3">
+        <app-grafica class="position"></app-grafica>
     </div>
 
 </div>

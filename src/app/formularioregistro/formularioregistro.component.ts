@@ -90,6 +90,10 @@ export class FormularioregistroComponent implements OnInit {
     })
   }
 
+  public refrescarFormulario():void{
+    this.formulario=this.inicializarFormulario()
+  }
+
   public buscarMercancia(){
     console.log(this.datosZonas);
     let iup=this.formulario.value.iup
@@ -123,14 +127,10 @@ export class FormularioregistroComponent implements OnInit {
 
       },
       error=>{
-        console.log(error.error)
+     
         this.formulario.enable()
-        let id=this.formulario.controls['iup'].value()
-        this.formulario.reset()
-
-        this.formulario.patchValue({
-          iup:id
-        })
+     //   let id=this.formulario.controls['iup'].value()
+       // this.formulario.reset()
         this.controlDeZona=true
 
       }

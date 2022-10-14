@@ -148,6 +148,10 @@
                     <hr>
                 </div>
 
+                <div class="my-4">
+                    <button (click)="refrescarFormulario()" class="btn btn-warning" >Refrescar</button>
+                </div>
+
                 <div class="row">
                     <div class="col-12">
                         <h3>Mercancia:</h3>
@@ -203,7 +207,7 @@
                             <hr>
                             <label class="form-label">Tipo de remitente: </label>
                             <div class="input-group">
-                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-triangle"></i></span>
+                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-triangle-fill"></i></span>
                                 <input type="text" class="form-control" placeholder="TipoRemitente"
                                     formControlName="tiporemitente">
                             </div>
@@ -345,7 +349,8 @@
                 <div class="mb-3 mt-5">
                     <h4>Ubicación en cuarto: </h4>
                     <hr>
-                    <select class="form-select" *ngIf="controlDeZona" formControlName="zona">
+                    <h6>Mis Zonas</h6>
+                    <select class="form-select" *ngIf="controlDeZona" formControlName="zona" >
                         <option value={{zona.id}} *ngFor="let zona of datosZonas">{{zona.nombre}}</option>
 
                     </select>
