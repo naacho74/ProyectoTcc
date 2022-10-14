@@ -1,4 +1,4 @@
-<form class="w-100 my-5" [formGroup]="formulario" (ngSubmit)="analizarFormulario()">
+<!-- <form class="w-100 my-5" [formGroup]="formulario" (ngSubmit)="analizarFormulario()">
 
     <div class="mb-5">
         <h3>Ingreso mercancia a cuarto de solución:</h3>
@@ -138,4 +138,223 @@
 
     <button type="submit" class="btn btn-warning w-100">Registrar</button>
 
-</form>
+</form> -->
+<div class="container containerpadre">
+    <div class="row">
+        <div class="col-12 col-md-12 ">
+            <form [formGroup]="formulario" (ngSubmit)="analizarFormulario()">
+                <div class="mb-5">
+                    <h3>Ingreso mercancia a cuarto de solución:</h3>
+                    <hr>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <h3>Mercancia:</h3>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="mb-3 col-6">
+
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-upc"></i></span>
+                            <input type="text" class="form-control" placeholder="IUP" formControlName="iup"
+                                (blur)="buscarMercancia()">
+                        </div>
+                        <div *ngIf="formulario.get('iup')?.touched && formulario.get('iup')?.errors?.['required']"
+                            class="form-text text-danger fw-bold">Este campo es obligatorio.</div>
+                        <div *ngIf="formulario.get('iup')?.touched && formulario.get('iup')?.errors?.['minlength']"
+                            class="form-text text-danger fw-bold">Este campo debe tener almenos 6 caractéres.</div>
+                    </div>
+                    <div class="col-6">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-pie-chart-fill"></i></span>
+                            <input type="text" class="form-control" placeholder="Volumen" formControlName="volumen">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><i class="bi bi-box2-fill"></i></span>
+                            <input type="text" class="form-control" placeholder="Descripcion Mercancia" formControlName="nombre">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12 mt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="basic-addon1"><i  class="bi bi-exclamation-triangle-fill"></i></span>
+                            <input type="text" class="form-control" placeholder="Novedad Mercancia" formControlName="novedad">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col col-12 col-md-6">
+                        <div class="mb-3 mt-5">
+                            <h4>Remitente: </h4>
+                            <hr>
+                            <label class="form-label">Tipo de remitente: </label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1"><i class="bi bi-triangle"></i></span>
+                                <input type="text" class="form-control" placeholder="TipoRemitente"
+                                    formControlName="tiporemitente">
+                            </div>
+                            <div *ngIf="formulario.get('tiporemitente')?.touched && formulario.get('tiporemitente')?.errors?.['required']"
+                                class="form-text text-danger fw-bold">Este campo es obligatorio.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-key"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="identificación"
+                                            formControlName="idremitente">
+                                    </div>
+                                    <div *ngIf="formulario.get('idremitente')?.touched && formulario.get('idremitente')?.errors?.['required']"
+                                        class="form-text text-danger fw-bold">Este campo es obligatorio.</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-person-circle"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Nombre"
+                                            formControlName="nombreremitente">
+                                    </div>
+                                    <div *ngIf="formulario.get('nombreremitente')?.touched && formulario.get('nombreremitente')?.errors?.['required']"
+                                        class="form-text text-danger fw-bold">Este campo es obligatorio.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group"> <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi bi-pin-map-fill"></i></span>
+                                        <input type="text" class="form-control" placeholder="departamento"
+                                            formControlName="deptoremitente">
+                                    </div>
+                                    <div *ngIf="formulario.get('deptoremitente')?.touched && formulario.get('deptoremitente')?.errors?.['required']"
+                                        class="form-text text-danger fw-bold">Este campo es obligatorio.</div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group"> <span class="input-group-text" id="basic-addon1"><i
+                                                class="bi bi-pin-map"></i></span>
+                                        <input type="text" class="form-control" placeholder="municipio"
+                                            formControlName="municipioremitente">
+                                    </div>
+                                    <div *ngIf="formulario.get('municipioremitente')?.touched && formulario.get('municipioremitente')?.errors?.['required']"
+                                        class="form-text text-danger fw-bold">Este campo es obligatorio.</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Dirección"
+                                    formControlName="direccionremitente">
+                            </div>
+                            <div *ngIf="formulario.get('direccionremitente')?.touched && formulario.get('tiporemitente')?.errors?.['required']"
+                                class="form-text text-danger fw-bold">Este campo es obligatorio.</div>
+                        </div>
+                    </div>
+                    <div class="col col-12 col-md-6">
+                        <div class="mb-3 mt-5">
+                            <h4>Destinatario: </h4>
+                            <hr>
+                            <label class="form-label">Tipo de Destinatario: </label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="basic-addon1"><i
+                                        class="bi bi-triangle-fill"></i></span>
+                                <input type="text" class="form-control" placeholder="TipoDestinatario"
+                                    formControlName="tipodestinatario">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-key"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="identificación"
+                                            formControlName="iddestinatario">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text">
+                                            <i class="bi bi-person-circle"></i>
+                                        </span>
+                                        <input type="text" class="form-control" placeholder="Nombre"
+                                            formControlName="nombredestinatario">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="input-group"><span class="input-group-text" id="basic-addon1"><i
+                                                class="bi bi-pin-map-fill"></i></span>
+                                        <input type="text" class="form-control" placeholder="Departamento"
+                                            formControlName="deptodestinatario">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="input-group"><span class="input-group-text" id="basic-addon1"><i
+                                                class="bi bi-pin-map"></i></span>
+                                        <input type="text" class="form-control" placeholder="Municipio"
+                                            formControlName="municipiodestinatario">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </span>
+                                <input type="text" class="form-control" placeholder="Dirección"
+                                    formControlName="direcciondestinatario">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="mb-3 mt-5">
+                    <h4>Ubicación en cuarto: </h4>
+                    <hr>
+                    <select class="form-select" *ngIf="controlDeZona" formControlName="zona">
+                        <option value={{zona.id}} *ngFor="let zona of datosZonas">{{zona.nombre}}</option>
+
+                    </select>
+                </div>
+
+                <div class="containerregistrar">
+                    <button type="submit" class="btn btn-warning my-4 ">Registrar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

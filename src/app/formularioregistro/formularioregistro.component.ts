@@ -42,6 +42,7 @@ export class FormularioregistroComponent implements OnInit {
     let datosMercancia=this.formulario.value
     datosMercancia.volumen=this.formulario.value.volumen
     datosMercancia.nombre=this.formulario.value.nombre
+    datosMercancia.nombre=this.formulario.value.novedad
     datosMercancia.iup=this.formulario.value.iup
     datosMercancia.tipoRemitente=this.formulario.value.tiporemitente
     datosMercancia.tipoDestinatario=this.formulario.value.tipodestinatario
@@ -71,6 +72,7 @@ export class FormularioregistroComponent implements OnInit {
     return this.fabricaDiccionario.group({
       iup:['',[Validators.required,Validators.pattern('/^[1-9]\d{6,10}$/')]],
       nombre:['',[Validators.required]],
+      novedad:['',[Validators.required]],
       volumen:['',[Validators.required]],
       tiporemitente:['',[Validators.required]],
       idremitente:['',[Validators.required]],
@@ -97,10 +99,13 @@ export class FormularioregistroComponent implements OnInit {
       respuesta=>{
 
        this.formulario.patchValue({
-
+        nombre:respuesta.nombre,
+        volumen:respuesta.volumen,
         tiporemitente:respuesta.tipoRemitente,
         idremitente:respuesta.idRemitente,
+        
         nombreremitente:respuesta.nombreRemitente,
+        novedad:respuesta.novedad,
         deptoremitente:respuesta.deptoRemitente,
         municipioremitente:respuesta.municipioRemitente,
         direccionremitente:respuesta.direccionRemitente,
@@ -120,6 +125,12 @@ export class FormularioregistroComponent implements OnInit {
       error=>{
         console.log(error.error)
         this.formulario.enable()
+        let id=this.formulario.controls['iup'].value()
+        this.formulario.reset()
+
+        this.formulario.patchValue({
+          iup:id
+        })
         this.controlDeZona=true
 
       }
