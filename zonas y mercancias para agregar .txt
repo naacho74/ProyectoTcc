@@ -9,6 +9,7 @@
                 "iup": 1,
                 "volumen": 50.0,
                 "nombre": "camiseta",
+                "novedad":"paquete roto y sin contenido",
                 "tipoRemitente": "Empresa",
                 "idRemitente": "90081450",
                 "nombreRemitente": "color-blue",
@@ -26,6 +27,7 @@
                 "iup": 2,
                 "volumen": 40.0,
                 "nombre": "pantalones",
+ 		"novedad":"Destinatario no recibe, esta fuera del pais",
                 "tipoRemitente": "Empresa",
                 "idRemitente": "90081450",
                 "nombreRemitente": "color-blue",
@@ -51,6 +53,7 @@
                 "iup": 3,
                 "volumen": 100.0,
                 "nombre": "colchon",
+		 "novedad":"paquete averiado, esta humedo",
                 "tipoRemitente": "Empresa",
                 "idRemitente": "900342312",
                 "nombreRemitente": "comodicimo",
@@ -76,6 +79,7 @@
                 "iup": 4,
                 "volumen": 150.0,
                 "nombre": "bicicleta",
+		 "novedad":"destinatario no paga contra-entrega...comunicar con remitente que tiene mal numero telefonico",	
                 "tipoRemitente": "Empresa",
                 "idRemitente": "900342312",
                 "nombreRemitente": "Uribe",
@@ -108,22 +112,23 @@
 ////////// mercancias /////////////
 
 {
-"volumen":"150",
-"nombre":"bicicleta",
-"tipoRemitente":"Empresa",
-"idRemitente":"900342312",
-"nombreRemitente":"Uribe",
-"deptoRemitente":"Antioquia",
-"municipioRemitente":"Medellin",
-"direccionRemitente":"calle 20 sur # 12-2",
-"tipoDestinatario":"Natural",
-"idDestinatario":"435345464",
-"nombreDestinatario":"rodolfo cano",
-"deptoDestinatario":"nariño",
-"municipioDestinatario":"ipiales",
-"direccionDestinatario":"calle 23# 34-12",
+ "volumen": 100.0,
+                "nombre": "colchon",
+                "novedad":"Destinatario se cambio de domicilio,verificar con remitente",
+                "tipoRemitente": "Empresa",
+                "idRemitente": "900342312",
+                "nombreRemitente": "comodicimo",
+                "deptoRemitente": "Antioquia",
+                "municipioRemitente": "Medellin",
+                "direccionRemitente": "calle 4 sur # 32-12",
+                "tipoDestinatario": "Natural",
+                "idDestinatario": "103345464",
+                "nombreDestinatario": "gloria perez",
+                "deptoDestinatario": "santander",
+                "municipioDestinatario": "giron",
+                "direccionDestinatario": "carrera 23# 45-12",
 "zona":{
- "id":3   
+ "id":1
 }
 
 

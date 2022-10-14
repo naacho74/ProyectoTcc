@@ -8,3 +8,17 @@
     position: fixed;
     left: 60%;
 }
+.novedad{
+    height:100px;
+    width: 200px;
+    color: red;
+}
+.alerta{
+    font-size: 30px;
+    color: aqua;
+}
+
+.logo{
+    height: 150px;
+    width: 250px;
+}
