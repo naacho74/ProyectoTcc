@@ -26,7 +26,9 @@
                   <th class="p-3 text-center">Descripcion Mercancia</th>
                   <th class="p-3 text-center">Volumen</th>
                   <th class="p-3 text-center">Iup</th>
-                  <th class="p-3 text-center"></th>
+                  <th class="p-3 text-center"></th> 
+                  <th class="p-3 text-center">Ampliar Info</th>
+                  
                 </thead>
                   <tbody class=" bg-light" *ngFor="let mercancia of dato.mercancias | filter: filterdatosMercancias">
                     <td class="p-3 text-center"><i (mouseover)="alertaDeNovedad(mercancia.novedad)" class="bi bi-exclamation-triangle-fill novedad"></i></td>
@@ -34,6 +36,7 @@
                     <td class="p-3 text-center">{{mercancia.volumen}}</td>
                     <td class="p-3 text-center">{{mercancia.iup}}</td>
                     <td class="p-2"> <button (click)="retirarMercancia(mercancia.iup)" class="btn btn-outline-danger m-2" type="button"><i class="bi bi-trash"></i></button></td>
+                    <td class="p-3 text-center" > <i (click)=" ampliarInfoAlerta(mercancia.iup,mercancia.nombre,mercancia.volumen,mercancia.nombreRemitente,mercancia.idRemitente,mercancia.direccionRemitente,mercancia.deptoRemitente,mercancia.municipioRemitente,mercancia.nombreDestinatario,mercancia.idDestinatario,mercancia.direccionDestinatario,mercancia.deptoDestinatario,mercancia.municipioDestinatario)"   class="bi bi-info-circle"></i></td>
                   </tbody> 
               </table>
              </div>

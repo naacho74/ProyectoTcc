@@ -67,6 +67,41 @@ export class CuartoComponent implements OnInit {
 
   }
 
+
+   ampliarInfoAlerta(
+    id:any,descripcion:any,
+  volumen:any,nombreRemitente:any,idRemitente:any,direccionRemitente:any,deptoRemitente:any,municipioRemitente:any,nombredestinatario:any,iddestinatario:any,direccionDestinatario:any,deptoDestinatario:any,municipioDestinatario:any
+  ):void{
+
+    Swal.fire({
+      html:`<div>
+      <p>Iup Mercancia: <b> ${id} </b> </p>
+      <p>Volumen: <b> ${volumen} </b></p>
+      <p> Descripcion: <b> ${descripcion} </b></p>
+      <h3>Remitente</h3>
+      <hr>
+      <p>Nombre Remitente: <b> ${nombreRemitente} </b></p>
+      <p>Identificacion Remitente: <b>${idRemitente} </b></p>
+      <p>Direccion Remitente: <b>   ${direccionRemitente} </b></p>
+      <p>Departamento Remitente:<b>  ${deptoRemitente}</b> </p>
+      <p>Municipio Remitente: <b>  ${municipioRemitente} </b></p>
+      <hr>
+      <h3>Destinatario</h3>
+      <hr>
+      <p>Nombre Destinatario:<b> ${nombredestinatario}</b></p>
+      <p>Identificacion Destinatario:<b> ${iddestinatario}</b></p>
+      <p>Direccion Destinatario: <b>${direccionDestinatario}</b></p>
+      <p>Departamento Destinatario:<b> ${deptoDestinatario}</b></p>
+      <p>Municipio Destinatario: <b>${municipioDestinatario}</b></p>
+      
+    </div> `
+      
+    })
+
+
+
+  }
+
   ngOnInit(): void {
   }
 
