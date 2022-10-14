@@ -84,7 +84,7 @@ export class FormularioregistroComponent implements OnInit {
       deptodestinatario:['',[Validators.required]],
       municipiodestinatario:['',[Validators.required]],
       direcciondestinatario:['',[Validators.required]],
-      zona:['1',[Validators.required]],
+      zona:['',[Validators.required]],
     })
   }
 

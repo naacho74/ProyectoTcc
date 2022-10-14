@@ -20,6 +20,7 @@ export class MercanciasService {
   }
 
   retirarMercancia(id:any):Observable<any>{
+
     let uri=`http://localhost:8080/api/tcc/mercancias/${id}`
     return this.peticion.delete(uri)
   }

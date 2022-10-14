@@ -1,18 +1,38 @@
 <app-menu></app-menu>
 
 <div class="row row-cols-12 row-cols-md-12">
-    <div class="col col-6 col-md-12">
+    
+ 
+  <div  class="col-12">
+    <div *ngFor="let dato of datosZonas" class="card col-4">
+      <h5>{{dato.nombre}}</h5>
+      <div *ngFor="let mercancia of dato.mercancias" class="col-12">
+
+      </div>
+    </div>
+  </div>
+
+ 
+  
+  
+  <div class="col col-6 col-md-12">
         <div class="row row-cols-1 row-cols-2 w-100">
+
+          
+
+
             <div class="col col-12 col-md-12 w-75 h-100 mx-auto d-block mt-5" *ngFor="let dato of datosZonas">
                 <h1 class="border-bottom p-4 bg-light">{{dato.nombre}}</h1>
                 <table class="table bg-secondary" >
                     <thead class="table-dark bg-dark">
+                      <th class="p-3 text-center"></th>
                       <th class="p-3 text-center">Mercancia</th>
                       <th class="p-3 text-center">Volumen</th>
                       <th class="p-3 text-center">Iup</th>
                       <th class="p-3 text-center"></th>
                     </thead>
                       <tbody class="bg-light" *ngFor="let mercancia of dato.mercancias">
+                        <td  class="p-2 text-center"><i (mouseover)="alertaDeNovedad(mercancia.novedad)" class="bi bi-exclamation-triangle-fill novedad"></i></td>
                         <td class="p-3 text-center">{{mercancia.nombre}}</td>
                         <td class="p-3 text-center">{{mercancia.volumen}}</td>
                         <td class="p-3 text-center">{{mercancia.iup}}</td>
