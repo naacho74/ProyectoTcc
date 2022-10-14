@@ -69,7 +69,7 @@ export class FormularioregistroComponent implements OnInit {
 
   public inicializarFormulario():FormGroup{
     return this.fabricaDiccionario.group({
-      iup:['',[Validators.required]],
+      iup:['',[Validators.required,Validators.pattern('/^[1-9]\d{6,10}$/')]],
       nombre:['',[Validators.required]],
       volumen:['',[Validators.required]],
       tiporemitente:['',[Validators.required]],

@@ -1,3 +1,13 @@
+.pointer{
+    cursor: pointer;
+}
+.position-grafica{
+    position: fixed;
+}
+.position{
+    position: fixed;
+    left: 60%;
+}
 .novedad{
     height:100px;
     width: 200px;

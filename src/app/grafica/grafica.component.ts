@@ -9,20 +9,20 @@ import { ZonasService } from '../services/zonas.service';
   styleUrls: ['./grafica.component.css']
 })
 export class GraficaComponent{
-  view: [number,number] = [700, 400];
+  view: [number,number] = [500, 300];
 
   // options
   gradient: boolean = true;
   showLegend: boolean = true;
   showLabels: boolean = true;
-  isDoughnut: boolean = false;
+  isDoughnut: boolean = true;
   legendPosition: LegendPosition=LegendPosition.Below;
 
   colorScheme : Color= {
     name:'colorestcc',
     selectable:true,
     group: ScaleType.Ordinal,
-    domain: ['#0819A5', '#08A514', '#C7B42C', '#AAAAAA'],
+    domain: ['#A93226 ', '#F4D03F', '#AAB7B8', '#212F3D'],
   };
 
   disponibilidades:any[]=[]

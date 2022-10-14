@@ -1,7 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
+
 import Swal from 'sweetalert2';
 import { MercanciasService } from '../services/mercancias.service';
 import { ZonasService } from '../services/zonas.service';
+
 
 
 @Component({
@@ -11,6 +14,7 @@ import { ZonasService } from '../services/zonas.service';
 })
 export class CuartoComponent implements OnInit {
 
+ 
   datosZonas:any[]=[];
   cantiadadMercancia:any;
   
@@ -41,10 +45,18 @@ export class CuartoComponent implements OnInit {
     })
     
   }
+  tablas:boolean = false;
 
+  public visibleTablas(){
+    console.log(this.tablas)
+      this.tablas=true;
+    
+
+    console.log(this.tablas)
+  }
   alertaDeNovedad(novedad:String):void{
     console.log('alerta')
-  Swal.fire({
+    Swal.fire({
     html:`<b class="alerta text-center">${novedad}</b> `,
    icon:'warning',
    width:'40%',
@@ -58,4 +70,16 @@ export class CuartoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-}
+  public invisibleTablas(){
+    this.tablas=false;
+    
+  }
+
+  
+   filterdatosMercancias:any='';
+
+   handleSearch(value:string){
+    this.filterdatosMercancias=value
+   }
+
+ }
