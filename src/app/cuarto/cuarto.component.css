@@ -4,3 +4,7 @@
 .position-grafica{
     position: fixed;
 }
+.position{
+    position: fixed;
+    left: 60%;
+}

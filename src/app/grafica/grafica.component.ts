@@ -22,7 +22,7 @@ export class GraficaComponent{
     name:'colorestcc',
     selectable:true,
     group: ScaleType.Ordinal,
-    domain: ['#0819A5', '#08A514', '#C7B42C', '#AAAAAA'],
+    domain: ['#A93226 ', '#F4D03F', '#AAB7B8', '#212F3D'],
   };
 
   disponibilidades:any[]=[]
